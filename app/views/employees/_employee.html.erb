@@ -1,0 +1,35 @@
+<div class="employeeSingle">
+	<div class="employeeSingleName">
+		<p><%= link_to "#{employee.last_name}, #{employee.first_name}", employee %></p>
+	</div>
+	<div class="employeeSingleStats">
+		<div>
+			<p class="employeeSingleLabel">Tier:</p>
+			<p class="employeeSingleData"><%= employee.tier %></p>
+			<div class="clear"></div>
+		</div>
+		<div>
+			<p class="employeeSingleLabel">Location:</p> 
+			<p class="employeeSingleData">
+				<% if employee.directions.first.nil? %>
+					N/A
+				<% else %>
+					<%= Location.find(employee.directions.first.location_id).name %>
+				<% end %>
+			</p>
+			<div class="clear"></div>
+		</div>
+		<div>
+			<p class="employeeSingleLabel">Last Job:</p> 
+			<p class="employeeSingleData">
+				<% if employee.assignments.first.nil? %>
+					N/A
+				<% else %>
+					<%= employee.assignments.first.created_at.strftime("%b %m, %y")%> <span class="grey">|</span> <%= Job.find(employee.assignments.first.job_id).name %>
+				<% end %>
+			</p>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>

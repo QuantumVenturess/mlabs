@@ -1,0 +1,12 @@
+<div class="pageHeader">
+	<ul>
+		<li><%= link_to "New Employee", new_employee_path %></li>
+	</ul>
+</div>
+<div class="pageContent">
+	<p class="employeesHeader">All Employees - <%= @employees.size %></p>
+	<div class="allEmployees">
+		<%= render @employees %>
+	</div>
+	<div class="clear"></div>
+</div>

@@ -1,0 +1,19 @@
+<div class="pageHeader">
+	<ul>
+		<% if Default.first %>
+			<%= link_to "Edit Defaults", edit_default_path(Default.first) %></li>
+		<% else %>
+			<li><%= link_to "New Defaults", new_default_path %></li>
+		<% end %>
+		<li><%= link_to "Delete Defaults", Default.first, method: :delete, confirm: "Are you sure you want to delete system defaults?" %></li>
+	</ul>
+</div>
+<div class="pageContent">
+	<p class="jobsHeader">System Defaults</p>
+	<% @defaults.each do |default| %>
+		<p><%= pluralize(default.lab_employees, "employee") %> needed each week in the lab</p>
+		<p><%= pluralize(default.work_days, "work day") %> in the week</p>
+		<p><%= pluralize(default.wet_employees, "employee") %> needed each day at the Wet Station</p>
+		<p><%= pluralize(default.entry_employees, "employee") %> needed each week at the Entry Station</p>
+	<% end %>
+</div>

@@ -1,0 +1,35 @@
+.lab {
+	float: left;
+}
+
+.office {
+	float: right;
+}
+
+.lab, .office {
+	width: 49%;
+}
+
+.locationHeader {
+	font-size: 28px;
+	padding: 20px 0;
+}
+
+.locationData {
+	margin: 0 0 20px 0;
+}
+
+.locationData p {
+	font-size: 14px;
+}
+
+.locationEmployee {
+	float: left;
+}
+
+.locationEmployee a {
+	display: block;
+	font-size: 14px;
+	padding: 5px;
+	width: 200px;
+}

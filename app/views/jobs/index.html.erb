@@ -1,0 +1,26 @@
+<div class="pageHeader">
+	<ul>
+		<%= render 'side_panel' %>
+	</ul>
+</div>
+<div class="pageContent">
+	<div class="wetStation">
+		<p class="jobsHeader">Wet Station - <%= @wet.size %></p>
+		<% @wet_station.each do |month_day, assignments| %>
+			<p class="jobsDate"><%= month_day %></p>
+			<% for assignment in assignments %>
+				<%= render partial: 'assignments/assignment', object: assignment %>
+			<% end %>
+		<% end %>
+	</div>
+	<div class="entryStation">
+		<p class="jobsHeader">Entry Station - <%= @entry.size %></p>
+		<% @entry_station.each do |month_day, assignments| %>
+			<p class="jobsDate"><%= month_day %></p>
+			<% for assignment in assignments %>
+				<%= render partial: 'assignments/assignment', object: assignment %>
+			<% end %>
+		<% end %>
+	</div>
+	<div class="clear"></div>
+</div>

@@ -1,0 +1,36 @@
+<div class="pageHeader">
+	<%= link_to "Edit Employee", edit_employee_path(@employee) %>
+	<%= link_to "Add Assignment", assign_employee_path(@employee) %>
+	<%= link_to "Add Work Location", direct_employee_path(@employee) %>
+	<%= link_to "Delete Employee", @employee, method: :delete, confirm: "Are you sure you want to delete this employee?" %>
+</div>
+</div>
+<div class="pageContent">
+	<div class="employeeShow">
+		<p class="employeeShowName"><%= link_to "#{@employee.name}", @employee %></p>
+		<div class="employeeShowSection">
+			<p class="employeeShowSectionHeader">First Name</p>
+			<p><%= @employee.first_name %></p>
+		</div>
+		<div class="employeeShowSection">
+			<p class="employeeShowSectionHeader">Last Name</p>
+			<p><%= @employee.last_name %></p>
+		</div>
+		<div class="employeeShowSection">
+			<p class="employeeShowSectionHeader">Tier Level</p>
+			<p><%= @employee.tier %></p>
+		</div>
+		<div class="employeeShowSection">
+			<p class="employeeShowSectionHeader">Job Assignments</p>
+			<ol>
+				<%= render partial: 'employee_assignment', collection: @assignments, as: :assignment %>
+			</ol>
+		</div>
+		<div class="employeeShowSection">
+			<p class="employeeShowSectionHeader">Locations Worked</p>
+			<ol>
+				<%= render partial: 'employee_direction', collection: @directions, as: :direction %>
+			</ol>
+		</div>
+	</div>
+</div>

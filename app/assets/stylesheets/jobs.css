@@ -1,0 +1,22 @@
+.jobsHeader {
+	font-size: 28px;
+	padding: 20px 0;
+}
+
+.jobsDate {
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0 0 5px 0;
+}
+
+.wetStation, .entryStation {
+	width: 49%;
+}
+
+.wetStation {
+	float: left;
+}
+
+.entryStation {
+	float: right;
+}

@@ -1,0 +1,16 @@
+<div class="employeeNew">
+	<p class="employeeNewHeader">New Location</p>
+	<div class="employeeNewForm">
+		<%= form_for @location do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+			<div class="field">
+				<p>Location Name</p>
+				<%= f.text_field :name, autocomplete: "off" %>
+			</div>
+			<div class="action">
+				<%= f.submit "Create" %>
+				<%= link_to "Cancel", locations_path %>
+			</div>
+		<% end %>
+	</div>
+</div>

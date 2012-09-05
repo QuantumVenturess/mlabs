@@ -1,0 +1,24 @@
+<div class="employeeNew">
+	<p class="employeeNewHeader">New Work Direction</p>
+	<div class="employeeNewForm">
+		<%= form_for @direction do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+			<div class="field">
+				<p>Employee ID</p>
+				<%= f.text_field :employee_id, value: "#{@employee.id}", readonly: "readonly" %>
+			</div>
+			<div class="field">
+				<p>Location ID</p>
+				<%= f.text_field :location_id, autocomplete: "off" %>
+			</div>
+			<div class="field">
+				<p>Date Worked</p>
+				<%= f.datetime_select :created_at, ampm: true, datetime_separator: "", use_short_month: true, order: [:month, :day, :year] %>
+			</div>
+			<div class="action">
+				<%= f.submit "Save" %>
+				<%= link_to "Cancel", employee_path(@employee) %>
+			</div>
+		<% end %>
+	</div>
+</div>

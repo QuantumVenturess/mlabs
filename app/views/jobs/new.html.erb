@@ -1,0 +1,20 @@
+<div class="employeeNew">
+	<p class="employeeNewHeader">New Job</p>
+	<div class="employeeNewForm">
+		<%= form_for @job do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+			<div class="field">
+				<p>Job Name</p>
+				<%= f.text_field :name, autocomplete: "off" %>
+			</div>
+			<div class="field">
+				<p>ID</p>
+				<%= f.text_field :id, autocomplete: "off" %>
+			</div>
+			<div class="action">
+				<%= f.submit "Create" %>
+				<%= link_to "Cancel", all_jobs_path %>
+			</div>
+		<% end %>
+	</div>
+</div>

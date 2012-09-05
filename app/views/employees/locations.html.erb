@@ -1,0 +1,16 @@
+<div class="pageHeader">
+	<%= link_to "Add Work Location", direct_employee_path(@employee) %>
+	<%= render 'side_panel' %>
+</div>
+</div>
+<div class="pageContent">
+	<div class="employeeShow">
+		<p class="employeeShowName"><%= link_to "#{@employee.name}", @employee %></p>
+		<div class="employeeShowSection">
+			<p class="employeeShowSectionHeader">Locations Worked</p>
+			<ol>
+				<%= render partial: 'employee_direction', collection: @directions, as: :direction %>
+			</ol>
+		</div>
+	</div>
+</div>

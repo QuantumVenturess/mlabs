@@ -1,0 +1,39 @@
+/* Employee partial */
+.employeeSingle {
+	border-top: 1px solid rgb(200, 200, 200);
+	padding: 10px;
+}
+
+.employeeSingleName {
+	font-size: 16px;
+	margin-bottom: 3px;
+}
+
+.employeeSingleStats {
+	font-size: 12px;
+}
+
+.employeeSingleLabel {
+	float: left;
+	margin-right: 3px;
+	width: 60px;
+}
+
+.employeeSingleData {
+	float: left;
+	width: 150px;
+}
+
+/* Employee index */
+.employeesHeader {
+	font-size: 28px;
+	padding: 20px;
+}
+
+.allEmployees {
+	padding: 0 20px 0 20px;
+}
+
+.allEmployees .employeeSingle {
+	float: left;
+}

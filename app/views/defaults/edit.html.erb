@@ -1,0 +1,28 @@
+<div class="employeeNew">
+	<p class="employeeNewHeader">Edit Defaults</p>
+	<div class="employeeNewForm">
+		<%= form_for @default do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+			<div class="field">
+				<p>Max Number of Employees in the Lab</p>
+				<%= f.text_field :lab_employees, autocomplete: "off" %>
+			</div>
+			<div class="field">
+				<p>Number of Work Days in the Week</p>
+				<%= f.text_field :work_days, autocomplete: "off" %>
+			</div>
+			<div class="field">
+				<p>Number of Employees Needed at the Wet Station Each Day</p>
+				<%= f.text_field :wet_employees, autocomplete: "off" %>
+			</div>
+			<div class="field">
+				<p>Number of Employees Needed at the Entry Station Each Week</p>
+				<%= f.text_field :entry_employees, autocomplete: "off" %>
+			</div>
+			<div class="action">
+				<%= f.submit "Save" %>
+				<%= link_to "Cancel", defaults_path %>
+			</div>
+		<% end %>
+	</div>
+</div>

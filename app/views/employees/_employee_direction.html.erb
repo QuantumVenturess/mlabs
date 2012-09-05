@@ -1,0 +1,9 @@
+<li class="employeeAssignment">
+	<div class="employeeAssignmentInfo">
+		<%= Location.find(direction.location_id).name %> <span class="grey"><%= direction.created_at.strftime("%a %b %d, %y")%> - <%= direction.created_at.strftime("%I:%M:%S %P") %></span>
+	</div>
+	<div class="employeeAssignmentEditDelete">
+		<%= link_to "Edit", edit_direction_path(direction) %>
+		<%= link_to "Delete", direction, method: :delete, confirm: "Are you sure you want to delete this location worked?" %>
+	</div>
+</li>

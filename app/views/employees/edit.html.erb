@@ -1,0 +1,36 @@
+<div class="employeeNew">
+	<p class="employeeNewHeader">Edit Employee</p>
+	<div class="employeeNewForm">
+		<%= form_for @employee do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+			<div class="field">
+				<p>Full Name</p>
+				<%= f.text_field :name, autocomplete: "off" %>
+			</div>
+			<div class="field">
+				<p>First Name</p>
+				<%= f.text_field :first_name, autocomplete: "off" %>
+			</div>
+			<div class="field">
+				<p>Last Name</p>
+				<%= f.text_field :last_name, autocomplete: "off" %>
+			</div>
+			<div class="field">
+				<p>Employee Tier Level</p>
+				<%= f.text_field :tier, autocomplete: "off" %>
+			</div>
+			<div class="field">
+				<p>Worked Wet Station?</p>
+				<%= f.check_box :wet_worked %>
+			</div>
+			<div class="field">
+				<p>Worked Entry Station?</p>
+				<%= f.check_box :entry_worked %>
+			</div>
+			<div class="action">
+				<%= f.submit "Save" %>
+				<%= link_to "Cancel", @employee %>
+			</div>
+		<% end %>
+	</div>
+</div>

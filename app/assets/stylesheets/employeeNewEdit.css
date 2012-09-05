@@ -1,0 +1,85 @@
+.employeeNew {
+	padding: 10px 40px;
+	width: 450px;
+}
+
+.employeeNewHeader {
+	font-size: 28px;
+	padding: 20px 0;
+}
+
+.employeeNewForm {
+
+}
+
+.employeeNewForm .field {
+	margin-bottom: 10px;
+}
+
+.employeeNewForm .field p {
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+.employeeNewForm .field input {
+	border: 1px solid rgb(200, 200, 200);
+	color: rgb(75, 75, 75);
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	padding: 10px;
+	margin: 0;
+	width: 400px;
+}
+
+.employeeNewForm .field input:hover {
+	border: 1px solid rgb(150, 150, 150);
+}
+
+.employeeNewForm .field input:active, .employeeNewForm .field input:focus {
+	border: 1px solid rgb(100, 100, 100);
+}
+
+.employeeNewForm .action {
+	padding: 20px 0 0 0;
+}
+
+.employeeNewForm .action input {
+	background: rgb(99, 182, 219);
+	border: 0px solid rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	padding: 10px 20px;
+	margin: 0;
+}
+
+.employeeNewForm .action input:hover {
+	background: rgb(104, 187, 224);
+}
+
+#employee_wet_worked, #employee_entry_worked {
+	margin: 10px 0;
+}
+
+.employeeNewForm .action a {
+	background: rgb(190, 190, 190);
+	border: 0px solid rgb(0, 0, 0);
+	color: rgb(75, 75, 75);
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	padding: 10px 20px;
+	margin: 0 0 0 10px;
+}
+
+.employeeNewForm .action a:hover {
+	background: rgb(195, 195, 195);
+}
+
+.employeeNewForm select {
+	border: 1px solid rgb(200, 200, 200);
+	color: rgb(75, 75, 75);
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	padding: 10px;
+	margin: 0 5px 0 0;
+}

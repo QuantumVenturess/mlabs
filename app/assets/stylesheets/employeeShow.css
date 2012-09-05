@@ -1,0 +1,66 @@
+/* Employee show */
+.employeeShow {
+	padding: 0 0 0 30px;
+}
+
+.employeeShowName {
+	font-size: 28px;
+	padding: 20px 0;
+}
+
+.employeeShowName a {
+	color: rgb(75, 75, 75);
+}
+
+.employeeShowName a:hover {
+	color: rgb(150, 150, 150);
+}
+
+.employeeShowSection {
+	margin: 0 0 20px 0;
+}
+
+.employeeShowSectionHeader {
+	font-weight: bold;
+	margin: 0 0 10px 0;
+}
+
+.employeeShowSection p {
+	font-size: 14px;
+}
+
+.employeeShowSection ol {
+	color: rgb(75, 75, 75);
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	padding: 0 0 0 40px;
+	margin: 0;
+}
+
+.employeeShowSection ol li {
+	padding: 5px;
+}
+
+/* Employee jobs */
+.employeeShowSection .employeeAssignment {
+	border-top: 1px dotted rgb(200, 200, 200);
+	padding: 10px 5px;
+	width: 500px;
+}
+
+.employeeAssignmentInfo {
+	float: left;
+	width: 400px;
+}
+
+.employeeAssignmentEditDelete {
+	float: right;
+}
+
+.employeeAssignmentEditDelete a {
+	padding: 0 5px;
+}
+
+.employeeAssignmentEditDelete a:first-child {
+	border-right: 1px dotted rgb(200, 200, 200);
+}
