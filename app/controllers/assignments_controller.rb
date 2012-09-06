@@ -9,7 +9,19 @@ class AssignmentsController < ApplicationController
 	def create
 		@assignment = Assignment.new(params[:assignment])
 		if @assignment.save
-			redirect_to employee_path(Employee.find(@assignment.employee_id))
+			employee = Employee.find(@assignment.employee_id)
+			if @assignment.job_id == 1
+				employee.update_attribute(:wet_worked, true)
+			elsif @assignment.job_id == 2
+				employee.update_attribute(:entry_worked, true)
+			elsif @assignment.job_id == 3
+				employee.update_attribute(:wones_worked, true)
+			elsif @assignment.job_id == 4
+				employee.update_attribute(:qns_worked, true)
+			elsif @assignment.job_id == 5
+				employee.update_attribute(:sarah_worked, true)
+			end
+			redirect_to employee_path(employee)
 		else
 			@employee = Employee.find(params[:assignment][:employee_id])
 			render 'employees/assign'
@@ -32,9 +44,20 @@ class AssignmentsController < ApplicationController
 	end
 
 	def destroy
-		assignment = Assignment.find(params[:id])
-		employee = Employee.find(assignment.employee_id)
-		assignment.destroy
+		@assignment = Assignment.find(params[:id])
+		employee = Employee.find(@assignment.employee_id)
+		if @assignment.job_id == 1
+			employee.update_attribute(:wet_worked, false)
+		elsif @assignment.job_id == 2
+			employee.update_attribute(:entry_worked, false)
+		elsif @assignment.job_id == 3
+			employee.update_attribute(:wones_worked, false)
+		elsif @assignment.job_id == 4
+			employee.update_attribute(:qns_worked, false)
+		elsif @assignment.job_id == 5
+			employee.update_attribute(:sarah_worked, false)
+		end
+		@assignment.destroy
 		redirect_to employee_path(employee)
 	end
 

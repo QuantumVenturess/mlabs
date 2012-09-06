@@ -1,4 +1,5 @@
 <div class="pageHeader">
+	<%= link_to "New Employee", new_employee_path %>
 	<%= link_to "Edit Employee", edit_employee_path(@employee) %>
 	<%= link_to "Add Assignment", assign_employee_path(@employee) %>
 	<%= link_to "Add Work Location", direct_employee_path(@employee) %>
@@ -9,16 +10,66 @@
 	<div class="employeeShow">
 		<p class="employeeShowName"><%= link_to "#{@employee.name}", @employee %></p>
 		<div class="employeeShowSection">
-			<p class="employeeShowSectionHeader">First Name</p>
-			<p><%= @employee.first_name %></p>
-		</div>
-		<div class="employeeShowSection">
-			<p class="employeeShowSectionHeader">Last Name</p>
-			<p><%= @employee.last_name %></p>
-		</div>
-		<div class="employeeShowSection">
 			<p class="employeeShowSectionHeader">Tier Level</p>
 			<p><%= @employee.tier %></p>
+		</div>
+		<div class="employeeShowSection">
+			<p class="employeeShowSectionHeader">Team</p>
+			<% if @employee.wones_team? || @employee.qns_team? || @employee.sarah_team? %>
+				<% if @employee.wones_team? %>
+					<p>Wet Ones</p>
+				<% end %>
+				<% if @employee.qns_team? %>
+					<p>QNS</p>
+				<% end %>
+				<% if @employee.sarah_team? %>
+					<p>Sarah's</p>
+				<% end %>
+			<% else %>
+				<p>None</p>
+			<% end %>
+		</div>
+		<div class="employeeShowSection">
+			<p class="employeeShowSectionHeader">Floater?</p>
+			<p>
+				<% if @employee.floater? %>
+					Yes
+				<% else %>
+					No
+				<% end %>
+			</p>
+		</div>
+		<div class="employeeShowSection">
+			<p class="employeeShowSectionHeader">Vacation?</p>
+			<p>
+				<% if @employee.vacation? %>
+					Yes
+				<% else %>
+					No
+				<% end %>
+			</p>
+		</div>
+		<div class="employeeShowSection">
+			<p class="employeeShowSectionHeader">Worked Stations</p>
+			<% if @employee.wet_worked? || @employee.entry_worked? || @employee.wones_worked? || @employee.qns_worked? || @employee.sarah_worked? %>
+				<% if @employee.wet_worked? %>
+					<p>Wet Station</p>
+				<% end %>
+				<% if @employee.entry_worked? %>
+					<p>Entry Station</p>
+				<% end %>
+				<% if @employee.wones_worked? %>
+					<p>Wet Ones</p>
+				<% end %>
+				<% if @employee.qns_worked? %>
+					<p>Reject's Station</p>
+				<% end %>
+				<% if @employee.sarah_worked? %>
+					<p>Sarah's Station</p>
+				<% end %>
+			<% else %>
+				<p>None</p>
+			<% end %>
 		</div>
 		<div class="employeeShowSection">
 			<p class="employeeShowSectionHeader">Job Assignments</p>

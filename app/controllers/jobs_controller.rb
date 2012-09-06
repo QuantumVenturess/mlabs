@@ -22,6 +22,11 @@ class JobsController < ApplicationController
 		end
 	end
 
+	def show
+		@job = Job.find(params[:id])
+		@title = "#{@job.name}"
+	end
+
 	def edit
 		@title = "Edit Job"
 		@job = Job.find(params[:id])

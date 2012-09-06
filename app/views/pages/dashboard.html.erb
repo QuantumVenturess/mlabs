@@ -1,20 +1,123 @@
+<% content_for :head do %>
+	<script>
+		$(document).ready(function() {
+			$('.dividerLab').height($('.dashboard').height());
+		})
+	</script>
+<% end %>
+<p class="dashboardHeader">The Laboratory</p>
 <div class="dashboard">
-	<div class="dashboardLab">
-		<div class="dashboardWet">
-			<p class="dashboardHeader">Today's Wet Station - <%= Time.now.strftime("%A %m-%d-%y") %></p>
-			<%= render partial: 'employee', collection: @wet_current %>
-			<div class="clear"></div>
+	<div id="leftLab" class="dashboardLab">
+		<div id="station2" class="station">
+			<div class="seat seat1">
+				<p><%= link_to "#{@lab[4].last_name}, #{@lab[4].first_name}", @lab[4] if @lab[4] %></p>
+			</div>
+			<div class="seat seat2">
+				<p><%= link_to "#{@lab[5].last_name}, #{@lab[5].first_name}", @lab[5] if @lab[5] %></p>
+			</div>
+			<div class="stationName">
+				<p>Station 2</p>
+			</div>
+			<div class="seat seat3">
+				<p><%= link_to "#{@lab[6].last_name}, #{@lab[6].first_name}", @lab[6] if @lab[6] %></p>
+			</div>
+			<div class="seat seat4">
+				<p><%= link_to "#{@lab[7].last_name}, #{@lab[7].first_name}", @lab[7] if @lab[7] %></p>
+			</div>
 		</div>
-		<div class="dashboardEntry">
-			<p class="dashboardHeader">This Week's Entry Station</p>
-			<%= render partial: 'employee', collection: @entry_current %>
-			<div class="clear"></div>
+		<div id="station4" class="station">
+			<div class="seat seat1">
+				<p><%= link_to "#{@lab[12].last_name}, #{@lab[12].first_name}", @lab[12] if @lab[12] %></p>
+			</div>
+			<div class="seat seat2">
+				<p><%= link_to "#{@lab[13].last_name}, #{@lab[13].first_name}", @lab[13] if @lab[13] %></p>
+			</div>
+			<div class="stationName">
+				<p>Station 4</p>
+			</div>
+			<div class="seat seat3">
+				<p><%= link_to "#{@lab[14].last_name}, #{@lab[14].first_name}", @lab[14] if @lab[14] %></p>
+			</div>
+			<div class="seat seat4">
+				<p><%= link_to "#{@lab[15].last_name}, #{@lab[15].first_name}", @lab[15] if @lab[15] %></p>
+			</div>
 		</div>
-		<p class="dashboardHeader dashboardLabHeader">Employees Working in Lab</p>
-		<%= render partial: 'employee', collection: @lab %>
+		<div id="entryStation" class="station">
+			<div class="seat seat1">
+				<p><%= link_to "#{@entry_station[0].last_name}, #{@entry_station[0].first_name}", @entry_station[0] if @entry_station[0] %> <%= "#{@entry_station[0].assignments.first.created_at.strftime("%m/%d")}" if @entry_station[0] %></p>
+			</div>
+			<div class="stationName">
+				<p>Entry Station</p>
+			</div>
+			<div class="seat seat3">
+				<p><%= link_to "#{@entry_station[1].last_name}, #{@entry_station[1].first_name}", @entry_station[1] if @entry_station[1] %> <%= "#{@entry_station[1].assignments.first.created_at.strftime("%m/%d")}" if @entry_station[1] %></p>
+			</div>
+		</div>
 	</div>
-	<div class="dashboardOffice">
-		<p class="dashboardHeader dashboardOfficeHeader">Employees Working in Office</p>
-		<%= render partial: 'employee', collection: @office %>
+	<div id="rightLab" class="dashboardLab">
+		<div id="station1" class="station">
+			<div class="seat seat1">
+				<p><%= link_to "#{@lab[0].last_name}, #{@lab[0].first_name}", @lab[0] if @lab[0] %></p>
+			</div>
+			<div class="seat seat2">
+				<p><%= link_to "#{@lab[1].last_name}, #{@lab[1].first_name}", @lab[1] if @lab[1] %></p>
+			</div>
+			<div class="stationName">
+				<p>Station 1</p>
+			</div>
+			<div class="seat seat3">
+				<p><%= link_to "#{@lab[2].last_name}, #{@lab[2].first_name}", @lab[2] if @lab[2] %></p>
+			</div>
+			<div class="seat seat4">
+				<p><%= link_to "#{@lab[3].last_name}, #{@lab[3].first_name}", @lab[3] if @lab[3] %></p>
+			</div>
+		</div>
+		<div id="station3" class="station">
+			<div class="seat seat1">
+				<p><%= link_to "#{@lab[8].last_name}, #{@lab[8].first_name}", @lab[8] if @lab[8] %></p>
+			</div>
+			<div class="seat seat2">
+				<p><%= link_to "#{@lab[9].last_name}, #{@lab[9].first_name}", @lab[9] if @lab[9] %></p>
+			</div>
+			<div class="stationName">
+				<p>Station 3</p>
+			</div>
+			<div class="seat seat3">
+				<p><%= link_to "#{@lab[10].last_name}, #{@lab[10].first_name}", @lab[10] if @lab[10] %></p>
+			</div>
+			<div class="seat seat4">
+				<p><%= link_to "#{@lab[11].last_name}, #{@lab[11].first_name}", @lab[11] if @lab[11] %></p>
+			</div>
+		</div>
+		<div id="station5" class="station">
+			<div class="seat seat1">
+				<p><%= link_to "#{@lab[16].last_name}, #{@lab[16].first_name}", @lab[16] if @lab[16] %></p>
+			</div>
+			<div class="seat seat2">
+				<p><%= link_to "#{@lab[17].last_name}, #{@lab[17].first_name}", @lab[17] if @lab[17] %></p>
+			</div>
+			<div class="stationName">
+				<p>Station 5</p>
+			</div>
+			<div class="seat seat3">
+				<p><%= link_to "#{@lab[18].last_name}, #{@lab[18].first_name}", @lab[18] if @lab[18] %></p>
+			</div>
+			<div class="seat seat4">
+				<p><%= link_to "#{@lab[19].last_name}, #{@lab[19].first_name}", @lab[19] if @lab[19] %></p>
+			</div>
+		</div>
+		<div id="wetStation" class="station">
+			<div class="seat seat1">
+				<p><%= link_to "#{@wet_station[0].last_name}, #{@wet_station[0].first_name}", @wet_station[0] if @wet_station[0] %> <%= "#{@wet_station[0].assignments.first.created_at.strftime("%m/%d")}" if @wet_station[0] %></p>
+			</div>
+			<div class="stationName">
+				<p>Wet Station</p>
+			</div>
+			<div class="seat seat3">
+				<p><%= link_to "#{@wet_station[1].last_name}, #{@wet_station[1].first_name}", @wet_station[1] if @wet_station[1] %> <%= "#{@wet_station[1].assignments.first.created_at.strftime("%m/%d")}" if @wet_station[1] %></p>
+			</div>
+		</div>
 	</div>
+	<div class="dividerLab"></div>
+	<div class="clear"></div>
 </div>

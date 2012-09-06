@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120905222402) do
+ActiveRecord::Schema.define(:version => 20120906191516) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "employee_id"
@@ -54,13 +54,29 @@ ActiveRecord::Schema.define(:version => 20120905222402) do
     t.boolean  "entry_worked", :default => false
     t.string   "first_name"
     t.string   "last_name"
+    t.boolean  "vacation",     :default => false
+    t.boolean  "floater",      :default => false
+    t.boolean  "wones_team",   :default => false
+    t.boolean  "wones_worked", :default => false
+    t.boolean  "qns_team",     :default => false
+    t.boolean  "qns_worked",   :default => false
+    t.boolean  "sarah_team",   :default => false
+    t.boolean  "sarah_worked", :default => false
   end
 
   add_index "employees", ["entry_worked"], :name => "index_employees_on_entry_worked"
   add_index "employees", ["first_name", "last_name"], :name => "index_employees_on_first_name_and_last_name", :unique => true
+  add_index "employees", ["floater"], :name => "index_employees_on_floater"
   add_index "employees", ["name"], :name => "index_employees_on_name"
+  add_index "employees", ["qns_team"], :name => "index_employees_on_qns_team"
+  add_index "employees", ["qns_worked"], :name => "index_employees_on_qns_worked"
+  add_index "employees", ["sarah_team"], :name => "index_employees_on_sarah_team"
+  add_index "employees", ["sarah_worked"], :name => "index_employees_on_sarah_worked"
   add_index "employees", ["tier"], :name => "index_employees_on_tier"
+  add_index "employees", ["vacation"], :name => "index_employees_on_vacation"
   add_index "employees", ["wet_worked"], :name => "index_employees_on_wet_worked"
+  add_index "employees", ["wones_team"], :name => "index_employees_on_wones_team"
+  add_index "employees", ["wones_worked"], :name => "index_employees_on_wones_worked"
 
   create_table "jobs", :force => true do |t|
     t.string   "name"

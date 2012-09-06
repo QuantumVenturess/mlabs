@@ -9,6 +9,22 @@
 	float: left;
 }
 
+.header .logo a {
+	display: block;
+	padding: 2px 2px 2px 20px;
+	height: 41px;
+	width: 254px;
+}
+
+.header .logo a:hover {
+	background: none;
+}
+
+.logo img {
+	height: 41px;
+	width: 254px;
+}
+
 .header ul {
 	float: right;
 	list-style-type: none;

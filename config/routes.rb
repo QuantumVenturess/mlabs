@@ -26,4 +26,5 @@ Mlabs::Application.routes.draw do
 	match 'delete-directions' => 'locations#delete_directions', as: 'delete_directions'
 	#pages
 	root to: 'pages#dashboard'
+	match 'overview' => 'pages#overview', as: 'overview'
 end

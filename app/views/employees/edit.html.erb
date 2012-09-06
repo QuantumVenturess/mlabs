@@ -8,6 +8,10 @@
 				<%= f.text_field :name, autocomplete: "off" %>
 			</div>
 			<div class="field">
+				<p>Employee Tier Level</p>
+				<%= f.text_field :tier, autocomplete: "off" %>
+			</div>
+			<div class="field">
 				<p>First Name</p>
 				<%= f.text_field :first_name, autocomplete: "off" %>
 			</div>
@@ -16,16 +20,44 @@
 				<%= f.text_field :last_name, autocomplete: "off" %>
 			</div>
 			<div class="field">
-				<p>Employee Tier Level</p>
-				<%= f.text_field :tier, autocomplete: "off" %>
+				<p>Wet Team</p>
+				<%= f.check_box :wones_team %>
 			</div>
 			<div class="field">
-				<p>Worked Wet Station?</p>
+				<p>QNS Team</p>
+				<%= f.check_box :qns_team %>
+			</div>
+			<div class="field">
+				<p>Sarah's Team</p>
+				<%= f.check_box :sarah_team %>
+			</div>
+			<div class="field">
+				<p>Floater</p>
+				<%= f.check_box :floater %>
+			</div>
+			<div class="field">
+				<p>On vacation?</p>
+				<%= f.check_box :vacation %>
+			</div>
+			<div class="field">
+				<p>Worked wet station?</p>
 				<%= f.check_box :wet_worked %>
 			</div>
 			<div class="field">
-				<p>Worked Entry Station?</p>
+				<p>Worked entry station?</p>
 				<%= f.check_box :entry_worked %>
+			</div>
+			<div class="field">
+				<p>Worked wet ones station?</p>
+				<%= f.check_box :wones_worked %>
+			</div>
+			<div class="field">
+				<p>Worked rejects station?</p>
+				<%= f.check_box :qns_worked %>
+			</div>
+			<div class="field">
+				<p>Worked Sarah's station?</p>
+				<%= f.check_box :sarah_worked %>
 			</div>
 			<div class="action">
 				<%= f.submit "Save" %>

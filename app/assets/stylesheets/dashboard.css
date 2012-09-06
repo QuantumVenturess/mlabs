@@ -1,59 +1,67 @@
+.dashboardHeader {
+	font-size: 28px;
+	font-weight: bold;
+	padding: 20px 0 0 0;
+	text-align: center;
+}
+
 .dashboard {
+	margin: 0 auto;
+	padding: 20px 0;
+	width: 900px;
+}
+
+#leftLab {
+	float: left;
+}
+
+#rightLab {
+	float: right;
+}
+
+.dashboardLab .station:first-child {
+	margin: 0;
+}
+
+.station {
+	background: rgb(245, 245, 245);
+	border: 1px solid rgb(180, 180, 180);
+	margin: 40px 0 0 0;
+	height: 150px;
+	width: 300px;
+}
+
+.seat p {
+	font-size: 14px;
+	height: 16px;
 	padding: 10px;
 }
 
-.dashboardHeader {
-	font-size: 28px;
-}
-
-.dashboardLab, .dashboardOffice {
-	width: 50%;
-}
-
-.dashboardLab {
+.seat1, .seat3 {
 	float: left;
 }
 
-.dashboardLabHeader, .dashboardOfficeHeader {
-	padding: 20px 0;
-}
-
-.dashboardOffice {
+.seat2, .seat4 {
 	float: right;
-}
-
-.dashboardOfficeHeader {
 	text-align: right;
 }
 
-.employeeDash {
+.stationName {
 	float: left;
+	height: 78px;
+	width: 100%;
 }
 
-.dashboardLab .employeeDash {
-	float: left;
+.stationName p {
+	height: 30px;
+	font-size: 28px;
+	padding: 24px 0;
+	text-align: center;
 }
 
-.dashboardOffice .employeeDash {
-	float: right;
-}
-
-.employeeDash {
-	height: 100px;
-	margin: 5px;
+.dividerLab {
+	background: rgb(235, 235, 235);
+	border: 1px solid rgb(180, 180, 180);
+	margin: 0 auto;
 	width: 200px;
-}
-
-.employeeDashName a {
-	display: block;
-	font-size: 14px;
-	padding: 5px;
-}
-
-.employeeDashInfo {
-	padding: 5px;
-}
-
-.employeeDashInfo p {
-	font-size: 12px;
 }

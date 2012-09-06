@@ -1,5 +1,5 @@
 class Employee < ActiveRecord::Base
-	attr_accessible :name, :first_name, :last_name, :tier, :wet_worked, :entry_worked
+	attr_accessible :name, :first_name, :last_name, :tier, :wet_worked, :entry_worked, :vacation, :floater, :wones_team, :wones_worked, :qns_team, :qns_worked, :sarah_team, :sarah_worked
 
 	has_many :assignments, dependent: :destroy
 	has_many :jobs, through: :assignments

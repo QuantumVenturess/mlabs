@@ -20,13 +20,18 @@
 	margin: 0 0 20px 0;
 }
 
-.employeeShowSectionHeader {
+.employeeShowSection .employeeShowSectionHeader {
 	font-weight: bold;
 	margin: 0 0 10px 0;
 }
 
 .employeeShowSection p {
 	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+.employeeShowSection p:last-child {
+	margin: 0;
 }
 
 .employeeShowSection ol {
