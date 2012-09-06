@@ -3,7 +3,6 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.1'
 gem 'devise'
 gem 'dalli'
-gem "eventmachine", "1.0.0.beta.4.1"
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -16,6 +15,7 @@ end
 
 group :development do
 	gem 'sqlite3'
+	gem "eventmachine", "1.0.0.beta.4.1"
 end
 
 
