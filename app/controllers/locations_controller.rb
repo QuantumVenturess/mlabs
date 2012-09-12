@@ -41,6 +41,7 @@ class LocationsController < ApplicationController
 
 	def delete_directions
 		Direction.destroy_all
+		Undo.where("name = ? OR name = ?", "Set Locations", "Switch Locations").destroy_all
 		redirect_to locations_path
 	end
 end

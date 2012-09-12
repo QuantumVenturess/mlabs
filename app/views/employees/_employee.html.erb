@@ -1,4 +1,5 @@
 <div class="employeeSingle">
+	<%= link_to "", employee, class: "employeeLink" %>
 	<div class="employeeSingleName">
 		<p><%= link_to "#{employee.last_name}, #{employee.first_name}", employee %></p>
 	</div>
@@ -25,11 +26,10 @@
 				<% if employee.assignments.first.nil? %>
 					N/A
 				<% else %>
-					<%= employee.assignments.first.created_at.strftime("%b %m, %y")%> <span class="grey">|</span> <%= Job.find(employee.assignments.first.job_id).name %>
+					<%= Job.find(employee.assignments.first.job_id).name %> <span class="grey">|</span> <%= employee.assignments.first.created_at.strftime("%b %m, %y")%>
 				<% end %>
 			</p>
 			<div class="clear"></div>
 		</div>
-		<div class="clear"></div>
 	</div>
 </div>

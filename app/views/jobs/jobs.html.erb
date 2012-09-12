@@ -1,0 +1,13 @@
+<div class="pageHeader">
+	<%= render 'side_panel' %>
+</div>
+<%= render 'shared/search' %>
+<div class="pageContent">
+	<div class="singleJobHeader">
+		<p><%= @title %>: <%= @all_assignments.size %></p>
+	</div>
+	<div class="singleJobsList">
+		<%= render partial: "jobs/assignment", collection: @assignments %>
+		<%= will_paginate @assignments, separator: "" %>
+	</div>
+</div>

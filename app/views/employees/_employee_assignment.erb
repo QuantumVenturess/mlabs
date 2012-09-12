@@ -1,6 +1,6 @@
 <li class="employeeAssignment">
 	<div class="employeeAssignmentInfo">
-		<%= Job.find(assignment.job_id).name %> <span class="grey"><%= assignment.created_at.strftime("%a %b %d, %y")%> - <%= assignment.created_at.strftime("%I:%M:%S %P") %></span>
+		<%= Job.find(assignment.job_id).name %> <span class="grey"><%= assignment.created_at.strftime("%a %b %d, %y") %> - <%= assignment.created_at.strftime("%I:%M:%S %P") %></span>
 	</div>
 	<div class="employeeAssignmentEditDelete">
 		<%= link_to "Edit", edit_assignment_path(assignment) %>

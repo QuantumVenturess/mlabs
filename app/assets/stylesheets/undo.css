@@ -1,0 +1,32 @@
+.undoList {
+	width: 450px;
+}
+
+.undoList ol {
+	color: rgb(75, 75, 75);
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	margin: 0;
+	padding: 0 0 0 20px;
+}
+
+.undoSingle {
+	border-top: 1px dotted rgb(200, 200, 200);
+	padding: 10px 20px 10px 20px;
+}
+
+.undoName, .reverseLink, .undoInfo {
+	font-size: 14px;
+}
+
+.undoName {
+	margin: 0 0 5px 0;
+}
+
+.reverseLink {
+	float: right;
+}
+
+.undoInfo p {
+	color: rgb(150, 150, 150);
+}

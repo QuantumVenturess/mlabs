@@ -1,7 +1,7 @@
 <div class="employeeNew">
 	<p class="employeeNewHeader">Edit Employee</p>
-	<div class="employeeNewForm">
-		<%= form_for @employee do |f| %>
+	<%= form_for @employee do |f| %>
+		<div class="employeeNewForm">
 			<%= render 'shared/error_messages', object: f.object %>
 			<div class="field">
 				<p>Full Name</p>
@@ -35,6 +35,24 @@
 				<p>Floater</p>
 				<%= f.check_box :floater %>
 			</div>
+			<div class="action">
+				<%= f.submit "Save" %>
+				<%= link_to "Cancel", @employee %>
+			</div>
+		</div>
+		<div class="employeeNewForm">
+			<div class="field">
+				<p>Station Number</p>
+				<%= f.text_field :station, autocomplete: "off" %>
+			</div>
+			<div class="field">
+				<p>Seat Number</p>
+				<%= f.text_field :seat, autocomplete: "off" %>
+			</div>
+			<div class="field">
+				<p>Must Assign</p>
+				<%= f.text_field :must_assign, autocomplete: "off" %>
+			</div>
 			<div class="field">
 				<p>On vacation?</p>
 				<%= f.check_box :vacation %>
@@ -59,10 +77,7 @@
 				<p>Worked Sarah's station?</p>
 				<%= f.check_box :sarah_worked %>
 			</div>
-			<div class="action">
-				<%= f.submit "Save" %>
-				<%= link_to "Cancel", @employee %>
-			</div>
-		<% end %>
-	</div>
+		</div>
+	<% end %>
+	<div class="clear"></div>
 </div>

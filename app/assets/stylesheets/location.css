@@ -12,10 +12,12 @@
 
 .locationHeader {
 	font-size: 28px;
-	padding: 20px 0;
+	padding: 0 0 20px 0;
+	text-align: center;
 }
 
 .locationData {
+	padding: 0 0 0 5px;
 	margin: 0 0 20px 0;
 }
 
@@ -31,5 +33,13 @@
 	display: block;
 	font-size: 14px;
 	padding: 5px;
-	width: 200px;
+	width: 150px;
+}
+
+.locationEmployeeWorked {
+	padding: 0 5px 5px 5px;
+}
+
+.locationEmployeeWorked p {
+	font-size: 11px;
 }

@@ -1,12 +1,12 @@
 <div class="pageHeader">
-	<ul>
-		<li><%= link_to "New Employee", new_employee_path %></li>
-	</ul>
+	<%= render 'side_panel' %>
 </div>
+<%= render 'shared/search' %>
 <div class="pageContent">
-	<p class="employeesHeader">All Employees - <%= @employees.size %></p>
+	<p class="employeesHeader">Employees: <%= @search.size %></p>
 	<div class="allEmployees">
 		<%= render @employees %>
+		<%= will_paginate @employees, separator: "" %>
 	</div>
 	<div class="clear"></div>
 </div>

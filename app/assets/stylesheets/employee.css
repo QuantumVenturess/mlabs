@@ -1,16 +1,28 @@
 /* Employee partial */
 .employeeSingle {
-	border-top: 1px solid rgb(200, 200, 200);
-	padding: 10px;
+	border-top: 1px dotted rgb(200, 200, 200);
+}
+
+.employeeSingle:hover {
+	background: rgb(245, 245, 245);
+}
+
+.employeeLink {
+	display: block;
+	height: 86px;
+	position: absolute;
+	width: 650px;
 }
 
 .employeeSingleName {
-	font-size: 16px;
-	margin-bottom: 3px;
+	font-size: 14px;
+	margin: 0 0 5px 0;
+	padding: 10px 20px 0 20px;
 }
 
 .employeeSingleStats {
 	font-size: 12px;
+	padding: 0 20px 10px 20px;
 }
 
 .employeeSingleLabel {
@@ -21,19 +33,15 @@
 
 .employeeSingleData {
 	float: left;
-	width: 150px;
 }
 
 /* Employee index */
 .employeesHeader {
 	font-size: 28px;
-	padding: 20px;
+	padding: 0 0 20px 0;
 }
 
 .allEmployees {
-	padding: 0 20px 0 20px;
-}
-
-.allEmployees .employeeSingle {
 	float: left;
+	width: 650px;
 }

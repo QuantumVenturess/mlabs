@@ -8,7 +8,7 @@
 .dashboard {
 	margin: 0 auto;
 	padding: 20px 0;
-	width: 900px;
+	width: 1000px;
 }
 
 #leftLab {
@@ -31,10 +31,23 @@
 	width: 300px;
 }
 
-.seat p {
-	font-size: 14px;
+.seat {
+	height: 36px;
+	width: 150px;
+}
+
+.seat a {
+	display: block;
+	font-size: 12px;
 	height: 16px;
-	padding: 10px;
+}
+
+.seat1 a, .seat3 a {
+	padding: 10px 5px 10px 10px;
+}
+
+.seat2 a, .seat4 a {
+	padding: 10px 10px 10px 5px;
 }
 
 .seat1, .seat3 {
@@ -59,9 +72,22 @@
 	text-align: center;
 }
 
-.dividerLab {
+.divider {
 	background: rgb(235, 235, 235);
 	border: 1px solid rgb(180, 180, 180);
 	margin: 0 auto;
-	width: 200px;
+	width: 300px;
+}
+
+.dividerLab {
+
+}
+
+#station8 {
+	height: 150px;
+	width: 300px;
+}
+
+#station9 {
+	float: right;
 }

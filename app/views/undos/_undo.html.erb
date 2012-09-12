@@ -1,0 +1,13 @@
+<li>
+	<div class="undoSingle">
+		<div class="reverseLink">
+			<p><%= link_to "Undo", reverse_undo_path(undo), confirm: "Are you sure you want to undo this?" %></p>
+		</div>
+		<div class="undoName">
+			<p><%= undo.name %></p>
+		</div>
+		<div class="undoInfo">
+			<p><%= undo.created_at.strftime("%a %b %d, %y") %> - <%= undo.created_at.strftime("%I:%M:%S %P") %></p>
+		</div>
+	</div>
+</li>

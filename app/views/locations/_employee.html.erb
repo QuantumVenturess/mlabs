@@ -1,3 +1,45 @@
 <div class="locationEmployee">
 	<%= link_to "#{employee.last_name}, #{employee.first_name}", employee %>
+	<div class="locationEmployeeWorked">
+		<p>
+			Wet Station:
+			<% if employee.wet_worked? %>
+				Yes
+			<% else %>
+				No
+			<% end %>
+		</p>
+		<p>
+			Entry Station:
+			<% if employee.entry_worked? %>
+				Yes
+			<% else %>
+				No
+			<% end %>
+		</p>
+		<p>
+			Wet Ones:
+			<% if employee.wones_worked? %>
+				Yes
+			<% else %>
+				No
+			<% end %>
+		</p>
+		<p>
+			Rejects Station:
+			<% if employee.qns_worked? %>
+				Yes
+			<% else %>
+				No
+			<% end %>
+		</p>
+		<p>
+			Sarah's Station:
+			<% if employee.sarah_worked? %>
+				Yes
+			<% else %>
+				No
+			<% end %>
+		</p>
+	</div>
 </div>

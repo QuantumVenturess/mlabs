@@ -1,7 +1,7 @@
 <% content_for :head do %>
 	<script>
 		$(document).ready(function() {
-			$('.dividerLab').height($('.dashboard').height());
+			$('.dividerLab').height($('.dashboard').height() - 150);
 		})
 	</script>
 <% end %>
@@ -10,114 +10,162 @@
 	<div id="leftLab" class="dashboardLab">
 		<div id="station2" class="station">
 			<div class="seat seat1">
-				<p><%= link_to "#{@lab[4].last_name}, #{@lab[4].first_name}", @lab[4] if @lab[4] %></p>
+				<%= link_to "#{@station2_1.last_name}, #{@station2_1.first_name}", @station2_1 if @station2_1 %>
 			</div>
 			<div class="seat seat2">
-				<p><%= link_to "#{@lab[5].last_name}, #{@lab[5].first_name}", @lab[5] if @lab[5] %></p>
+				<%= link_to "#{@station2_2.last_name}, #{@station2_2.first_name}", @station2_2 if @station2_2 %>
 			</div>
 			<div class="stationName">
 				<p>Station 2</p>
 			</div>
 			<div class="seat seat3">
-				<p><%= link_to "#{@lab[6].last_name}, #{@lab[6].first_name}", @lab[6] if @lab[6] %></p>
+				<%= link_to "#{@station2_3.last_name}, #{@station2_3.first_name}", @station2_3 if @station2_3 %>
 			</div>
 			<div class="seat seat4">
-				<p><%= link_to "#{@lab[7].last_name}, #{@lab[7].first_name}", @lab[7] if @lab[7] %></p>
+				<%= link_to "#{@station2_4.last_name}, #{@station2_4.first_name}", @station2_4 if @station2_4 %>
 			</div>
 		</div>
 		<div id="station4" class="station">
 			<div class="seat seat1">
-				<p><%= link_to "#{@lab[12].last_name}, #{@lab[12].first_name}", @lab[12] if @lab[12] %></p>
+				<%= link_to "#{@station4_1.last_name}, #{@station4_1.first_name}", @station4_1 if @station4_1 %>
 			</div>
 			<div class="seat seat2">
-				<p><%= link_to "#{@lab[13].last_name}, #{@lab[13].first_name}", @lab[13] if @lab[13] %></p>
+				<%= link_to "#{@station4_2.last_name}, #{@station4_2.first_name}", @station4_2 if @station4_2 %>
 			</div>
 			<div class="stationName">
 				<p>Station 4</p>
 			</div>
 			<div class="seat seat3">
-				<p><%= link_to "#{@lab[14].last_name}, #{@lab[14].first_name}", @lab[14] if @lab[14] %></p>
+				<%= link_to "#{@station4_3.last_name}, #{@station4_3.first_name}", @station4_3 if @station4_3 %>
 			</div>
 			<div class="seat seat4">
-				<p><%= link_to "#{@lab[15].last_name}, #{@lab[15].first_name}", @lab[15] if @lab[15] %></p>
+				<%= link_to "#{@station4_4.last_name}, #{@station4_4.first_name}", @station4_4 if @station4_4 %>
 			</div>
 		</div>
-		<div id="entryStation" class="station">
+		<div id="station7" class="station">
 			<div class="seat seat1">
-				<p><%= link_to "#{@entry_station[0].last_name}, #{@entry_station[0].first_name}", @entry_station[0] if @entry_station[0] %> <%= "#{@entry_station[0].assignments.first.created_at.strftime("%m/%d")}" if @entry_station[0] %></p>
+				<%= link_to "#{@station7_1.last_name}, #{@station7_1.first_name}", @station7_1 if @station7_1 %>
+			</div>
+			<div class="seat seat2">
+				<%= link_to "#{@station7_2.last_name}, #{@station7_2.first_name}", @station7_2 if @station7_2 %>
 			</div>
 			<div class="stationName">
-				<p>Entry Station</p>
+				<p>Station 7</p>
 			</div>
 			<div class="seat seat3">
-				<p><%= link_to "#{@entry_station[1].last_name}, #{@entry_station[1].first_name}", @entry_station[1] if @entry_station[1] %> <%= "#{@entry_station[1].assignments.first.created_at.strftime("%m/%d")}" if @entry_station[1] %></p>
+				<%= link_to "#{@station7_3.last_name}, #{@station7_3.first_name}", @station7_3 if @station7_3 %>
+			</div>
+			<div class="seat seat4">
+				<%= link_to "#{@station7_4.last_name}, #{@station7_4.first_name}", @station7_4 if @station7_4 %>
 			</div>
 		</div>
 	</div>
 	<div id="rightLab" class="dashboardLab">
 		<div id="station1" class="station">
 			<div class="seat seat1">
-				<p><%= link_to "#{@lab[0].last_name}, #{@lab[0].first_name}", @lab[0] if @lab[0] %></p>
+				<%= link_to "#{@station1_1.last_name}, #{@station1_1.first_name}", @station1_1 if @station1_1 %>
 			</div>
 			<div class="seat seat2">
-				<p><%= link_to "#{@lab[1].last_name}, #{@lab[1].first_name}", @lab[1] if @lab[1] %></p>
+				<%= link_to "#{@station1_2.last_name}, #{@station1_2.first_name}", @station1_2 if @station1_2 %>
 			</div>
 			<div class="stationName">
 				<p>Station 1</p>
 			</div>
 			<div class="seat seat3">
-				<p><%= link_to "#{@lab[2].last_name}, #{@lab[2].first_name}", @lab[2] if @lab[2] %></p>
+				<%= link_to "#{@station1_3.last_name}, #{@station1_3.first_name}", @station1_3 if @station1_3 %>
 			</div>
 			<div class="seat seat4">
-				<p><%= link_to "#{@lab[3].last_name}, #{@lab[3].first_name}", @lab[3] if @lab[3] %></p>
+				<%= link_to "#{@station1_4.last_name}, #{@station1_4.first_name}", @station1_4 if @station1_4 %>
 			</div>
 		</div>
 		<div id="station3" class="station">
 			<div class="seat seat1">
-				<p><%= link_to "#{@lab[8].last_name}, #{@lab[8].first_name}", @lab[8] if @lab[8] %></p>
+				<%= link_to "#{@station3_1.last_name}, #{@station3_1.first_name}", @station3_1 if @station3_1 %>
 			</div>
 			<div class="seat seat2">
-				<p><%= link_to "#{@lab[9].last_name}, #{@lab[9].first_name}", @lab[9] if @lab[9] %></p>
+				<%= link_to "#{@station3_2.last_name}, #{@station3_2.first_name}", @station3_2 if @station3_2 %>
 			</div>
 			<div class="stationName">
 				<p>Station 3</p>
 			</div>
 			<div class="seat seat3">
-				<p><%= link_to "#{@lab[10].last_name}, #{@lab[10].first_name}", @lab[10] if @lab[10] %></p>
+				<%= link_to "#{@station3_3.last_name}, #{@station3_3.first_name}", @station3_3 if @station3_3 %>
 			</div>
 			<div class="seat seat4">
-				<p><%= link_to "#{@lab[11].last_name}, #{@lab[11].first_name}", @lab[11] if @lab[11] %></p>
+				<%= link_to "#{@station3_4.last_name}, #{@station3_4.first_name}", @station3_4 if @station3_4 %>
 			</div>
 		</div>
 		<div id="station5" class="station">
 			<div class="seat seat1">
-				<p><%= link_to "#{@lab[16].last_name}, #{@lab[16].first_name}", @lab[16] if @lab[16] %></p>
+				<%= link_to "#{@station5_1.last_name}, #{@station5_1.first_name}", @station5_1 if @station5_1 %>
 			</div>
 			<div class="seat seat2">
-				<p><%= link_to "#{@lab[17].last_name}, #{@lab[17].first_name}", @lab[17] if @lab[17] %></p>
+				<%= link_to "#{@station5_2.last_name}, #{@station5_2.first_name}", @station5_2 if @station5_2 %>
 			</div>
 			<div class="stationName">
 				<p>Station 5</p>
 			</div>
 			<div class="seat seat3">
-				<p><%= link_to "#{@lab[18].last_name}, #{@lab[18].first_name}", @lab[18] if @lab[18] %></p>
+				<%= link_to "#{@station5_3.last_name}, #{@station5_3.first_name}", @station5_3 if @station5_3 %>
 			</div>
 			<div class="seat seat4">
-				<p><%= link_to "#{@lab[19].last_name}, #{@lab[19].first_name}", @lab[19] if @lab[19] %></p>
+				<%= link_to "#{@station5_4.last_name}, #{@station5_4.first_name}", @station5_4 if @station5_4 %>
 			</div>
 		</div>
-		<div id="wetStation" class="station">
+		<div id="station6" class="station">
 			<div class="seat seat1">
-				<p><%= link_to "#{@wet_station[0].last_name}, #{@wet_station[0].first_name}", @wet_station[0] if @wet_station[0] %> <%= "#{@wet_station[0].assignments.first.created_at.strftime("%m/%d")}" if @wet_station[0] %></p>
+				<%= link_to "#{@station6_1.last_name}, #{@station6_1.first_name}", @station6_1 if @station6_1 %>
+			</div>
+			<div class="seat seat2">
+				<%= link_to "#{@station6_2.last_name}, #{@station6_2.first_name}", @station6_2 if @station6_2 %>
 			</div>
 			<div class="stationName">
-				<p>Wet Station</p>
+				<p>Station 6</p>
 			</div>
 			<div class="seat seat3">
-				<p><%= link_to "#{@wet_station[1].last_name}, #{@wet_station[1].first_name}", @wet_station[1] if @wet_station[1] %> <%= "#{@wet_station[1].assignments.first.created_at.strftime("%m/%d")}" if @wet_station[1] %></p>
+				<%= link_to "#{@station6_3.last_name}, #{@station6_3.first_name}", @station6_3 if @station6_3 %>
+			</div>
+			<div class="seat seat4">
+				<%= link_to "#{@station6_4.last_name}, #{@station6_4.first_name}", @station6_4 if @station6_4 %>
 			</div>
 		</div>
 	</div>
-	<div class="dividerLab"></div>
+	<div class="divider">
+		<div class="dividerLab"></div>
+		<div id="station8">
+			<div class="seat seat1">
+				<%= link_to "#{@station8_1.last_name}, #{@station8_1.first_name}", @station8_1 if @station8_1 %>
+			</div>
+			<div class="seat seat2">
+				<%= link_to "#{@station8_2.last_name}, #{@station8_2.first_name}", @station8_2 if @station8_2 %>
+			</div>
+			<div class="stationName">
+				<p>Station 8</p>
+			</div>
+			<div class="seat seat3">
+				<%= link_to "#{@station8_3.last_name}, #{@station8_3.first_name}", @station8_3 if @station8_3 %>
+			</div>
+			<div class="seat seat4">
+				<%= link_to "#{@station8_4.last_name}, #{@station8_4.first_name}", @station8_4 if @station8_4 %>
+			</div>
+		</div>
+	</div>
 	<div class="clear"></div>
+</div>
+<div id="station9" class="station">
+	<div class="seat seat1">
+		<%= link_to "#{@station9_1.last_name}, #{@station9_1.first_name}", @station9_1 if @station9_1 %>
+	</div>
+	<div class="seat seat2">
+		<%= link_to "#{@station9_2.last_name}, #{@station9_2.first_name}", @station9_2 if @station9_2 %>
+	</div>
+	<div class="stationName">
+		<p>Station 9</p>
+	</div>
+	<div class="seat seat3">
+		<%= link_to "#{@station9_3.last_name}, #{@station9_3.first_name}", @station9_3 if @station9_3 %>
+	</div>
+	<div class="seat seat4">
+		<%= link_to "#{@station9_4.last_name}, #{@station9_4.first_name}", @station9_4 if @station9_4 %>
+	</div>
 </div>

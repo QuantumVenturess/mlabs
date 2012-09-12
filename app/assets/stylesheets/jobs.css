@@ -1,22 +1,74 @@
+/* Index */
+.jobs {
+	width: 900px;
+}
+
 .jobsHeader {
-	font-size: 28px;
-	padding: 20px 0;
+	font-size: 20px;
+	padding: 0 0 15px 0;
+}
+
+.jobStation {
+	float: left;
+	padding: 0 10px 0 0;
+	width: 170px;
 }
 
 .jobsDate {
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: bold;
-	margin: 0 0 5px 0;
+	margin: 5px 0 5px 0;
 }
 
-.wetStation, .entryStation {
-	width: 49%;
+.employeeJob {
+	padding: 5px;
 }
 
-.wetStation {
+.employeeJob a {
+	font-size: 12px;
+}
+
+/* Individual jobs pages and jobs/assignment partial */
+.singleJobHeader {
+	font-size: 28px;
+	padding: 0 0 20px 0;
+}
+
+.singleJobsList {
 	float: left;
+	width: 650px;
 }
 
-.entryStation {
-	float: right;
+.singleJob {
+	border-top: 1px dotted rgb(200, 200, 200);
+}
+
+.singleJob:hover {
+	background: rgb(245, 245, 245);
+}
+
+.singleJobEmployeeLink {
+	display: block;
+	height: 75px;
+	position: absolute;
+	width: 650px;
+}
+
+.singleJobEmployee {
+	font-size: 14px;
+	margin: 0 0 5px 0;
+	padding: 10px 20px 0 20px;
+}
+
+.singleJobInfo {
+	font-size: 12px;
+	padding: 0 20px 10px 20px;
+}
+
+.singleJobTimes {
+	margin: 0 0 3px 0;
+}
+
+.singleJobCreated p {
+	color: rgb(150, 150, 150);
 }

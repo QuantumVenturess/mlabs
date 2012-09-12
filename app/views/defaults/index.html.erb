@@ -1,5 +1,6 @@
 <div class="pageHeader">
 	<ul>
+		<li><p>Control Panel</p></li>
 		<% if Default.first %>
 			<%= link_to "Edit Defaults", edit_default_path(Default.first) %></li>
 		<% else %>
@@ -15,5 +16,8 @@
 		<p><%= pluralize(default.work_days, "work day") %> in the week</p>
 		<p><%= pluralize(default.wet_employees, "employee") %> needed each day at the Wet Station</p>
 		<p><%= pluralize(default.entry_employees, "employee") %> needed each week at the Entry Station</p>
+		<p><%= pluralize(default.wones_employees, "employee") %> needed each week at the Wet Ones</p>
+		<p><%= pluralize(default.qns_employees, "employee") %> needed each week at the Rejects Station</p>
+		<p><%= pluralize(default.sarah_employees, "employee") %> needed each week at Sarah's Station</p>
 	<% end %>
 </div>

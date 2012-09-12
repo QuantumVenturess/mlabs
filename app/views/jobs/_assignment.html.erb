@@ -1,0 +1,14 @@
+<div class="singleJob">
+	<%= link_to "", Employee.find(assignment.employee_id), class: "singleJobEmployeeLink" %>
+	<div class="singleJobEmployee">
+		<p><%= link_to "#{Employee.find(assignment.employee_id).name}", Employee.find(assignment.employee_id) %></p>
+	</div>
+	<div class="singleJobInfo">
+		<div class="singleJobTimes">
+			<p>Job Worked: <%= pluralize(Employee.find(assignment.employee_id).assignments.where("job_id = ? AND created_at <= ?", assignment.job_id, assignment.created_at).size, 'time') %></p>
+		</div>
+		<div class="singleJobCreated">
+			<p><%= assignment.created_at.strftime("%a %b %d, %y")%> - <%= assignment.created_at.strftime("%I:%M:%S %P") %></p>
+		</div>
+	</div>
+</div>

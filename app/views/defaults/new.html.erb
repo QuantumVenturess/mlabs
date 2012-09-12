@@ -8,16 +8,28 @@
 				<%= f.text_field :lab_employees, autocomplete: "off" %>
 			</div>
 			<div class="field">
-				<p>Number of Work Days in the Week</p>
+				<p>Work Days in the Week</p>
 				<%= f.text_field :work_days, autocomplete: "off" %>
 			</div>
 			<div class="field">
-				<p>Number of Employees Needed at the Wet Station Each Day</p>
+				<p>Employees needed at the Wet Station each day</p>
 				<%= f.text_field :wet_employees, autocomplete: "off" %>
 			</div>
 			<div class="field">
-				<p>Number of Employees Needed at the Entry Station Each Week</p>
+				<p>Employees needed at the Entry Station each week</p>
 				<%= f.text_field :entry_employees, autocomplete: "off" %>
+			</div>
+			<div class="field">
+				<p>Employees needed at the Wet Ones each week</p>
+				<%= f.text_field :wones_employees, autocomplete: "off" %>
+			</div>
+			<div class="field">
+				<p>Employees needed at the Rejects Station each week</p>
+				<%= f.text_field :qns_employees, autocomplete: "off" %>
+			</div>
+			<div class="field">
+				<p>Employees needed at Sarah's Station each week</p>
+				<%= f.text_field :sarah_employees, autocomplete: "off" %>
 			</div>
 			<div class="action">
 				<%= f.submit "Create" %>

@@ -1,5 +1,15 @@
-<li><%= link_to "New Job", new_job_path %></li>
-<li><%= link_to "All Jobs", all_jobs_path %></li>
-<li><%= link_to "Assign Wet Station", wet_assignment_path %></li>
-<li><%= link_to "Assign Entry Station", entry_assignment_path %></li>
-<li><%= link_to "Delete All Assignments", delete_assignments_path, confirm: "Are you sure you want to delete all assignments?" %></li>
+<ul>
+	<li><p>Primary Functions</p></li>
+	<li><%= link_to "Weekly Assignment", weekly_assignment_path %></li>
+	<li><%= link_to "Wet Station", wet_assignment_path %></li>
+	<li><%= link_to "Seat Assignment", seat_assignment_path, confirm: "Have you assigned all jobs?" %></li>
+	<li><p>Manually Assign</p></li>
+	<li><%= link_to "Sarah's Station", sarah_assignment_path %></li>
+	<li><%= link_to "Rejects Station", rejects_assignment_path %></li>
+	<li><%= link_to "Wet Ones", wones_assignment_path %></li>
+	<li><%= link_to "Entry Station", entry_assignment_path %></li>
+	<li><p>Do Not Touch</p></li>
+	<li><%= link_to "New Job", new_job_path %></li>
+	<li><%= link_to "All Jobs", all_jobs_path %></li>
+	<li><%= link_to "Delete All Assignments", delete_assignments_path, confirm: "Click cancel now!" %></li>
+</ul>

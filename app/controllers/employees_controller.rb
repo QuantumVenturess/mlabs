@@ -2,7 +2,8 @@ class EmployeesController < ApplicationController
 
 	def index
 		@title = "All Employees"
-		@employees = Employee.all
+		@search = Employee.search(params[:search])
+		@employees = @search.paginate(page: params[:page], per_page: 20)
 	end
 
 	def new
@@ -28,8 +29,10 @@ class EmployeesController < ApplicationController
 	def show
 		@employee = Employee.find(params[:id])
 		@title = "#{@employee.name}"
-		@assignments = @employee.assignments
-		@directions = @employee.directions
+		@all_assignments = @employee.assignments
+		@assignments = @all_assignments.take(5)
+		@all_directions = @employee.directions
+		@directions = @all_directions.take(5)
 	end
 
 	def edit
@@ -80,5 +83,26 @@ class EmployeesController < ApplicationController
 		@employee = Employee.find(params[:id])
 		@title = "New Direction"
 		@direction = Direction.new
+	end
+
+	def sarah_team
+		@title = "Sarah's Team"
+		@search = Employee.where("sarah_team = ?", true).search(params[:search])
+		@employees = @search.paginate(page: params[:page], per_page: 20)
+		render 'index'
+	end
+
+	def qns_team
+		@title = "QNS Team"
+		@search = Employee.where("qns_team = ?", true).search(params[:search])
+		@employees = @search.paginate(page: params[:page], per_page: 20)
+		render 'index'
+	end
+
+	def wet_ones
+		@title = "Wet Ones"
+		@search = Employee.where("wones_team = ?", true).search(params[:search])
+		@employees = @search.paginate(page: params[:page], per_page: 20)
+		render 'index'
 	end
 end

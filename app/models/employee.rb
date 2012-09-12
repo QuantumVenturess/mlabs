@@ -1,5 +1,7 @@
 class Employee < ActiveRecord::Base
-	attr_accessible :name, :first_name, :last_name, :tier, :wet_worked, :entry_worked, :vacation, :floater, :wones_team, :wones_worked, :qns_team, :qns_worked, :sarah_team, :sarah_worked
+	attr_accessible :name, :first_name, :last_name, :tier, :wet_worked, :entry_worked, 
+					:vacation, :floater, :wones_team, :wones_worked, :qns_team, :qns_worked, 
+					:sarah_team, :sarah_worked, :must_assign, :station, :seat
 
 	has_many :assignments, dependent: :destroy
 	has_many :jobs, through: :assignments
@@ -15,11 +17,31 @@ class Employee < ActiveRecord::Base
 
 	default_scope order: "employees.last_name ASC"
 
+	def self.search(search)
+		if search
+			if Rails.env.production?
+				where("name ILIKE ? OR first_name ILIKE ? OR last_name ILIKE ? OR tier ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+			else
+				where("name LIKE ? OR first_name LIKE ? OR last_name LIKE ? OR tier LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+			end
+		else
+			scoped
+		end
+	end
+
 	def current_location
 		if self.directions.first
 			self.directions.first.location_id
 		else
 			nil
+		end
+	end
+
+	def on_team?
+		if self.wones_team? || self.qns_team? || self.sarah_team?
+			true
+		else
+			false
 		end
 	end
 
@@ -35,7 +57,7 @@ class Employee < ActiveRecord::Base
 		end
 	end
 
-	def currently_entry?
+	def currently_working?
 		if self.assignments.first.nil?
 			false
 		else
@@ -43,37 +65,84 @@ class Employee < ActiveRecord::Base
 			if today == 0
 				false
 			elsif today == 1
-				if self.assignments.first.job_id == 2 && self.assignments.first.created_at > Time.now - 86400 * 1
+				if self.assignments.first.created_at > Time.now - 86400 * 1
 					true
 				else
 					false
 				end
 			elsif today == 2
-				if self.assignments.first.job_id == 2 && self.assignments.first.created_at > Time.now - 86400 * 2
+				if self.assignments.first.created_at > Time.now - 86400 * 2
 					true
 				else
 					false
 				end
 			elsif today == 3
-				if self.assignments.first.job_id == 2 && self.assignments.first.created_at > Time.now - 86400 * 3
+				if self.assignments.first.created_at > Time.now - 86400 * 3
 					true
 				else
 					false
 				end
 			elsif today == 4
-				if self.assignments.first.job_id == 2 && self.assignments.first.created_at > Time.now - 86400 * 4
+				if self.assignments.first.created_at > Time.now - 86400 * 4
 					true
 				else
 					false
 				end
 			elsif today == 5
-				if self.assignments.first.job_id == 2 && self.assignments.first.created_at > Time.now - 86400 * 5
+				if self.assignments.first.created_at > Time.now - 86400 * 5
 					true
 				else
 					false
 				end
 			elsif today == 6
-				if self.assignments.first.job_id == 2 && self.assignments.first.created_at > Time.now - 86400 * 6
+				if self.assignments.first.created_at > Time.now - 86400 * 6
+					true
+				else
+					false
+				end
+			end
+		end
+	end
+
+	def working?(job)
+		if self.assignments.first.nil?
+			false
+		else
+			today = Time.now.strftime("%w").to_i
+			if today == 0
+				false
+			elsif today == 1
+				if self.assignments.first.job_id == job && self.assignments.first.created_at > Time.now - 86400 * 1
+					true
+				else
+					false
+				end
+			elsif today == 2
+				if self.assignments.first.job_id == job && self.assignments.first.created_at > Time.now - 86400 * 2
+					true
+				else
+					false
+				end
+			elsif today == 3
+				if self.assignments.first.job_id == job && self.assignments.first.created_at > Time.now - 86400 * 3
+					true
+				else
+					false
+				end
+			elsif today == 4
+				if self.assignments.first.job_id == job && self.assignments.first.created_at > Time.now - 86400 * 4
+					true
+				else
+					false
+				end
+			elsif today == 5
+				if self.assignments.first.job_id == job && self.assignments.first.created_at > Time.now - 86400 * 5
+					true
+				else
+					false
+				end
+			elsif today == 6
+				if self.assignments.first.job_id == job && self.assignments.first.created_at > Time.now - 86400 * 6
 					true
 				else
 					false

@@ -1,0 +1,10 @@
+<ul>
+	<li><p>Control Panel</p></li>
+	<li><%= link_to "New Employee", new_employee_path %></li>
+	<li><p>Primary Functions</p></li>
+	<li><%= link_to "Edit Employee", edit_employee_path(@employee) %></li>
+	<li><%= link_to "Add Assignment", assign_employee_path(@employee) %></li>
+	<li><%= link_to "Add Work Location", direct_employee_path(@employee) %></li>
+	<li><p>Do Not Touch</p></li>
+	<li><%= link_to "Delete Employee", @employee, method: :delete, confirm: "Click cancel now!" %></li>
+</ul>

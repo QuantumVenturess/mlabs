@@ -1,26 +1,53 @@
 <div class="pageHeader">
-	<ul>
-		<%= render 'side_panel' %>
-	</ul>
+	<%= render 'side_panel' %>
 </div>
 <div class="pageContent">
-	<div class="wetStation">
-		<p class="jobsHeader">Wet Station - <%= @wet.size %></p>
-		<% @wet_station.each do |month_day, assignments| %>
-			<p class="jobsDate"><%= month_day %></p>
-			<% for assignment in assignments %>
-				<%= render partial: 'assignments/assignment', object: assignment %>
+	<div class="jobs">
+		<div class="jobStation wetStation">
+			<p class="jobsHeader"><%= link_to "Wet Station", wet_station_path %></p>
+			<% @wet_station.each do |month_day, assignments| %>
+				<p class="jobsDate"><%= month_day %></p>
+				<% for assignment in assignments %>
+					<%= render partial: 'employee_job', object: assignment, as: :assignment %>
+				<% end %>
 			<% end %>
-		<% end %>
-	</div>
-	<div class="entryStation">
-		<p class="jobsHeader">Entry Station - <%= @entry.size %></p>
-		<% @entry_station.each do |month_day, assignments| %>
-			<p class="jobsDate"><%= month_day %></p>
-			<% for assignment in assignments %>
-				<%= render partial: 'assignments/assignment', object: assignment %>
+		</div>
+		<div class="jobStation entryStation">
+			<p class="jobsHeader"><%= link_to "Entry Station", entry_station_path %></p>
+			<% @entry_station.each do |month_day, assignments| %>
+				<p class="jobsDate"><%= month_day %></p>
+				<% for assignment in assignments %>
+					<%= render partial: 'employee_job', object: assignment, as: :assignment %>
+				<% end %>
 			<% end %>
-		<% end %>
+		</div>
+		<div class="jobStation wonesStation">
+			<p class="jobsHeader"><%= link_to "Wet Ones", wones_station_path %></p>
+			<% @wones_station.each do |month_day, assignments| %>
+				<p class="jobsDate"><%= month_day %></p>
+				<% for assignment in assignments %>
+					<%= render partial: 'employee_job', object: assignment, as: :assignment %>
+				<% end %>
+			<% end %>
+		</div>
+		<div class="jobStation qnsStation">
+			<p class="jobsHeader"><%= link_to "Rejects Station", rejects_station_path %></p>
+			<% @qns_station.each do |month_day, assignments| %>
+				<p class="jobsDate"><%= month_day %></p>
+				<% for assignment in assignments %>
+					<%= render partial: 'employee_job', object: assignment, as: :assignment %>
+				<% end %>
+			<% end %>
+		</div>
+		<div class="jobStation sarahStation">
+			<p class="jobsHeader"><%= link_to "Sarah's Station", sarah_station_path %></p>
+			<% @sarah_station.each do |month_day, assignments| %>
+				<p class="jobsDate"><%= month_day %></p>
+				<% for assignment in assignments %>
+					<%= render partial: 'employee_job', object: assignment, as: :assignment %>
+				<% end %>
+			<% end %>
+		</div>
+		<div class="clear"></div>
 	</div>
-	<div class="clear"></div>
 </div>

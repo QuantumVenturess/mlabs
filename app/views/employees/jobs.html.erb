@@ -1,13 +1,12 @@
 <div class="pageHeader">
-	<%= link_to "Add Assignment", assign_employee_path(@employee) %>
-	<%= render 'side_panel' %>
+	<%= render 'employee_side_panel' %>
 </div>
 </div>
 <div class="pageContent">
 	<div class="employeeShow">
 		<p class="employeeShowName"><%= link_to "#{@employee.name}", @employee %></p>
 		<div class="employeeShowSection">
-			<p class="employeeShowSectionHeader">Job Assignments</p>
+			<p class="employeeShowSectionHeader">Job Assignments: <%= @assignments.size %></p>
 			<ol>
 				<%= render partial: 'employee_assignment', collection: @assignments, as: :assignment %>
 			</ol>

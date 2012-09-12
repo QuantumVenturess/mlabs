@@ -1,6 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
+gem 'will_paginate', '3.0.pre4'
+gem 'friendly_id'
 gem 'devise'
 gem 'dalli'
 
