@@ -19,10 +19,12 @@ class Employee < ActiveRecord::Base
 
 	def self.search(search)
 		if search
+			search = search.to_s
+			tier = search.to_i
 			if Rails.env.production?
-				where("name ILIKE ? OR first_name ILIKE ? OR last_name ILIKE ? OR tier ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+				where("name ILIKE ? OR first_name ILIKE ? OR last_name ILIKE ? OR tier = ?", "%#{search}%", "%#{search}%", "%#{search}%", tier)
 			else
-				where("name LIKE ? OR first_name LIKE ? OR last_name LIKE ? OR tier LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+				where("name LIKE ? OR first_name LIKE ? OR last_name LIKE ? OR tier = ?", "%#{search}%", "%#{search}%", "%#{search}%", tier)
 			end
 		else
 			scoped

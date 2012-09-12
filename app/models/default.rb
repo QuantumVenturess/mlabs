@@ -5,4 +5,7 @@ class Default < ActiveRecord::Base
 	validates :work_days, presence: true
 	validates :wet_employees, presence: true
 	validates :entry_employees, presence: true
+	validates :wones_employees, presence: true
+	validates :qns_employees, presence: true
+	validates :sarah_employees, presence: true
 end

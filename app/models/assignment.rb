@@ -15,10 +15,12 @@ class Assignment < ActiveRecord::Base
 
 	def self.search(search)
 		if search
+			search = search.to_s
+			tier = search.to_i
 			if Rails.env.production?
-				employee_ids = Employee.where("name ILIKE ? OR first_name ILIKE ? OR last_name ILIKE ? OR tier ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%").map(&:id).join(", ")
+				employee_ids = Employee.where("name ILIKE ? OR first_name ILIKE ? OR last_name ILIKE ? OR tier = ?", "%#{search}%", "%#{search}%", "%#{search}%", tier).map(&:id).join(", ")
 			else
-				employee_ids = Employee.where("name LIKE ? OR first_name LIKE ? OR last_name LIKE ? OR tier LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%").map(&:id).join(", ")
+				employee_ids = Employee.where("name LIKE ? OR first_name LIKE ? OR last_name LIKE ? OR tier = ?", "%#{search}%", "%#{search}%", "%#{search}%", tier).map(&:id).join(", ")
 			end
 			where("employee_id IN (#{employee_ids})")
 		else
