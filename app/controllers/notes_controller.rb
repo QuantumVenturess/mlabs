@@ -22,17 +22,27 @@ class NotesController < ApplicationController
 
 	def edit
 		@note = Note.find(params[:id])
-		@title = "Edit Note"
+		if current_user == User.find_by_id(@note.user_id) || current_user.admin?
+			@title = "Edit Note"
+		else
+			flash[:notice] = "You cannot edit someone else's note."
+			redirect_to @note
+		end
 	end
 
 	def update
 		@note = Note.find(params[:id])
-		if @note.update_attributes(params[:note])
-			flash[:success] = "Note successfully updated."
-			redirect_to @note
+		if current_user == User.find_by_id(@note.user_id) || current_user.admin?
+			if @note.update_attributes(params[:note])
+				flash[:success] = "Note successfully updated."
+				redirect_to @note
+			else
+				@title = "Edit Note"
+				render 'edit'
+			end
 		else
-			@title = "Edit Note"
-			render 'edit'
+			flash[:notice] = "You cannot edit someone else's note."
+			redirect_to @note
 		end
 	end
 
