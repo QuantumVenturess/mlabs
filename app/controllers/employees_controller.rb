@@ -1,4 +1,5 @@
 class EmployeesController < ApplicationController
+	before_filter :authenticate
 
 	def index
 		@title = "All Employees"
@@ -33,6 +34,8 @@ class EmployeesController < ApplicationController
 		@assignments = @all_assignments.take(5)
 		@all_directions = @employee.directions
 		@directions = @all_directions.take(5)
+		@all_notes = @employee.notes
+		@notes = @all_notes.take(5)
 	end
 
 	def edit
@@ -83,6 +86,19 @@ class EmployeesController < ApplicationController
 		@employee = Employee.find(params[:id])
 		@title = "New Direction"
 		@direction = Direction.new
+	end
+
+	def notes
+		@employee = Employee.find(params[:id])
+		@title = "All Notes"
+		@all_notes = @employee.notes.search(params[:search])
+		@notes = @all_notes.paginate(page: params[:page], per_page: 40)
+	end
+	
+	def note
+		@employee = Employee.find(params[:id])
+		@title = "New Note"
+		@note = Note.new
 	end
 
 	def sarah_team

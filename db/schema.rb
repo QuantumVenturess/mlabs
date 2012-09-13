@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120911213217) do
+ActiveRecord::Schema.define(:version => 20120912215317) do
 
   create_table "assignments", :force => true do |t|
     t.integer   "employee_id"
@@ -106,6 +106,19 @@ ActiveRecord::Schema.define(:version => 20120911213217) do
 
   add_index "locations", ["name"], :name => "index_locations_on_name"
 
+  create_table "notes", :force => true do |t|
+    t.string   "name"
+    t.text     "content"
+    t.integer  "employee_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notes", ["employee_id"], :name => "index_notes_on_employee_id"
+  add_index "notes", ["name"], :name => "index_notes_on_name"
+  add_index "notes", ["user_id"], :name => "index_notes_on_user_id"
+
   create_table "undos", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -123,5 +136,24 @@ ActiveRecord::Schema.define(:version => 20120911213217) do
   add_index "undos", ["sarah"], :name => "index_undos_on_sarah"
   add_index "undos", ["wet"], :name => "index_undos_on_wet"
   add_index "undos", ["wones"], :name => "index_undos_on_wones"
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "encrypted_password"
+    t.string   "salt"
+    t.boolean  "admin",              :default => false
+    t.string   "slug"
+    t.datetime "last_signed_in"
+    t.integer  "sign_in_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["last_signed_in"], :name => "index_users_on_last_signed_in"
+  add_index "users", ["name"], :name => "index_users_on_name", :unique => true
+  add_index "users", ["sign_in_count"], :name => "index_users_on_sign_in_count"
+  add_index "users", ["slug"], :name => "index_users_on_slug"
 
 end

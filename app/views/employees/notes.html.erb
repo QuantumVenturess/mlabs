@@ -1,0 +1,16 @@
+<div class="pageHeader">
+	<%= render 'employee_side_panel' %>
+</div>
+<%= render 'shared/search' %>
+<div class="pageContent">
+	<div class="employeeShow">
+		<p class="employeeShowName"><%= link_to "#{@employee.name}", @employee %></p>
+		<div class="employeeShowSection">
+			<p class="employeeShowSectionHeader">Employee Notes: <%= @all_notes.size %></p>
+			<ol>
+				<%= render partial: 'employee_note', collection: @notes, as: :note %>
+			</ol>
+			<%= will_paginate @notes, separator: "" %>
+		</div>
+	</div>
+</div>

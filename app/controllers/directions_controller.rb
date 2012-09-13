@@ -1,4 +1,5 @@
 class DirectionsController < ApplicationController
+	before_filter :authenticate
 
 	def create
 		@direction = Direction.new(params[:direction])

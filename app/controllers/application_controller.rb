@@ -1,8 +1,11 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
-  include ApplicationHelper
-  include AssignmentsHelper
-  include LocationsHelper
+	protect_from_forgery
+	include ApplicationHelper
+	include AssignmentsHelper
+	include NotesHelper
+	include LocationsHelper
+	include SessionsHelper
+	include UsersHelper
 
 	private
 

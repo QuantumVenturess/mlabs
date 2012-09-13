@@ -1,4 +1,7 @@
 class LocationsController < ApplicationController
+	before_filter :authenticate
+	before_filter :admin_user, except: [:index, :switch_locations]
+	
 	def index
 		@title = "Work Locations"
 		lab_employees = []
@@ -12,6 +15,11 @@ class LocationsController < ApplicationController
 		end
 		@lab = lab_employees.sort_by { |e| e.last_name }
 		@office = office_employees.sort_by { |e| e.last_name }
+	end
+
+	def switch_locations
+		switch
+		redirect_to locations_path
 	end
 
 	def new
@@ -31,11 +39,6 @@ class LocationsController < ApplicationController
 
 	def set_locations
 		set
-		redirect_to locations_path
-	end
-
-	def switch_locations
-		switch
 		redirect_to locations_path
 	end
 

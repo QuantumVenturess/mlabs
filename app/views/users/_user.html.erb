@@ -1,0 +1,15 @@
+<li>
+	<div class="undoSingle">
+		<% if current_user.admin? %>
+			<div class="reverseLink">
+				<p><%= link_to "Delete", user, method: :delete, confirm: "Are you sure you want to delete user?" %> <span class="grey">|</span> <%= link_to "Edit", edit_user_path(user) %></p>
+			</div>
+		<% end %>
+		<div class="undoName">
+			<p><%= user.name %></p>
+		</div>
+		<div class="undoInfo">
+			<p><%= user.last_signed_in.strftime("%a %b %d, %y") if user.last_signed_in %> - <%= user.last_signed_in.strftime("%I:%M:%S %P") if user.last_signed_in %></p>
+		</div>
+	</div>
+</li>

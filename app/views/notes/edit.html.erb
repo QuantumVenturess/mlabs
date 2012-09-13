@@ -1,0 +1,22 @@
+<div class="employeeNew">
+	<p class="employeeNewHeader">Edit Note</p>
+	<%= form_for @note do |f| %>
+		<div class="employeeNewForm">
+			<%= render 'shared/error_messages', object: f.object %>
+			<%= f.hidden_field :employee_id, value: @note.employee_id %>
+			<div class="field">
+				<p>Note Name</p>
+				<%= f.text_field :name, autocomplete: "off" %>
+			</div>
+			<div class="field">
+				<p>Content</p>
+				<%= f.text_area :content, autocomplete: "off", class: "noteContent" %>
+			</div>
+			<div class="action">
+				<%= f.submit "Save" %>
+				<%= link_to "Cancel", notes_employee_path(Employee.find(@note.employee_id)) %>
+			</div>
+		</div>
+	<% end %>
+	<div class="clear"></div>
+</div>

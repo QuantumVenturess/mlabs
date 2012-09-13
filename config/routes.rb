@@ -1,5 +1,5 @@
 Mlabs::Application.routes.draw do
-
+	
 	resources :assignments
 	resources :defaults
 	resources :directions
@@ -9,15 +9,20 @@ Mlabs::Application.routes.draw do
 			get :assign
 			get :locations
 			get :direct
+			get :note
+			get :notes
 		end
 	end
 	resources :jobs
 	resources :locations
+	resources :notes
+	resources :sessions, only: [:new, :create, :destroy]
 	resources :undos do
 		member do
 			get :reverse
 		end
 	end
+	resources :users
 
 	#assignments
 	match 'weekly-assignment' => 'assignments#weekly_assignment', as: 'weekly_assignment'
@@ -45,4 +50,7 @@ Mlabs::Application.routes.draw do
 	match 'delete-directions' => 'locations#delete_directions', as: 'delete_directions'
 	#pages
 	root to: 'pages#dashboard'
+	#sessions
+	match 'signin' => 'sessions#new', as: 'signin'
+	match 'signout' => 'sessions#destroy', as: 'signout'
 end

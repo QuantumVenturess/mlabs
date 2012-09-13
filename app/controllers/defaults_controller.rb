@@ -1,4 +1,6 @@
 class DefaultsController < ApplicationController
+	before_filter :authenticate
+	before_filter :admin_user, only: [:new, :create, :destroy]
 
 	def index
 		@title = "System Defaults"

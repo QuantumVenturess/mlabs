@@ -1,4 +1,6 @@
 class UndosController < ApplicationController
+	before_filter :authenticate
+	before_filter :admin_user, only: :reverse
 
 	def index
 		@title = "History"

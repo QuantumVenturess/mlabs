@@ -1,0 +1,23 @@
+<div class="pageHeader">
+	<ul>
+		<li><p>Control Panel</p></li>
+		<li><%= link_to "All Notes", notes_employee_path(Employee.find(@note.employee_id)) %></li>
+		<li><%= link_to "Add Note", note_employee_path(Employee.find(@note.employee_id)) %></li>
+		<li><%= link_to "Edit Note", edit_note_path(@note) %></li>
+		<li><%= link_to "Delete Note", @note, method: :delete, confirm: "Are you sure you want to delete this note?" %></li>
+	</ul>
+</div>
+<div class="pageContent">
+	<div class="note">
+		<p class="noteName"><%= @note.name %>: <%= link_to "#{Employee.find(@note.employee_id).name}", Employee.find(@note.employee_id) %></p>
+		<div class="noteUpdatedAt">
+			<p>Last edit: <%= @note.updated_at.strftime("%a %b %d, %y")%> - <%= @note.updated_at.strftime("%I:%M:%S %P") %></p>
+		</div>
+		<div class="noteShowContent">
+			<p><%= to_html(@note.content) %></p>
+		</div>
+		<div class="noteAuthor">
+			<p>Added by <%= User.find_by_id(@note.user_id).name if User.find_by_id(@note.user_id) %></p>
+		</div>
+	</div>
+</div>

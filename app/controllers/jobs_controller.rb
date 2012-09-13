@@ -1,5 +1,7 @@
 class JobsController < ApplicationController
 	before_filter :default_settings, only: :index
+	before_filter :authenticate
+	before_filter :admin_user, only: [:new, :create, :show, :edit, :update, :destroy, :all_jobs]
 
 	def index
 		@title = "Job Assignments"

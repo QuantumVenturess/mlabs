@@ -1,0 +1,93 @@
+/* Note create and edit */
+.noteContent {
+	border: 1px solid rgb(200, 200, 200);
+	color: rgb(75, 75, 75);
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	height: 320px;
+	padding: 10px;
+	margin: 0;
+	width: 400px;
+}
+
+.noteContent:hover {
+	border: 1px solid rgb(150, 150, 150);
+}
+
+.noteContent:active, .noteContent:focus {
+	border: 1px solid rgb(100, 100, 100);
+	outline: none;
+}
+
+/* Note partial */
+.employeeNoteInfo {
+	margin: 0 0 10px 0;
+	width: 400px;
+}
+
+.employeeNoteContent {
+
+}
+
+.employeeShowSection .employeeNoteContent p {
+	line-height: 18px;
+	margin: 0 0 5px 0;
+}
+
+.employeeShowSection .employeeNoteContent p:first-child, .employeeShowSection .employeeNoteContent p:nth-last-child(2), .employeeShowSection .employeeNoteContent p:last-child {
+	margin: 0;
+}
+
+.employeeNoteAuthor {
+	margin: 10px 0 0 0;
+}
+
+.employeeNoteAuthor p {
+	color: rgb(150, 150, 150);
+	font-size: 12px;
+}
+
+/* Note show */
+.note {
+	padding: 0 0 0 30px;
+}
+
+.noteName {
+	font-size: 28px;
+	margin: 0 0 5px 0;
+}
+
+.noteUpdatedAt {
+	padding: 0 0 10px 0;
+}
+
+.noteUpdatedAt p {
+	color: rgb(150, 150, 150);
+	font-size: 14px;
+}
+
+.noteShowContent {
+	border-top: 1px dotted rgb(200, 200, 200);
+	border-bottom: 1px dotted rgb(200, 200, 200);
+	padding: 20px 10px;
+	width: 500px;
+}
+
+.noteShowContent p {
+	font-size: 14px;
+	line-height: 18px;
+	margin: 0 0 14px 0;
+}
+
+.noteShowContent p:first-child, .noteShowContent p:nth-last-child(2), .noteShowContent p:last-child {
+	margin: 0;
+}
+
+.noteAuthor {
+	margin: 10px 0 0 0;
+}
+
+.noteAuthor p {
+	color: rgb(150, 150, 150);
+	font-size: 12px;
+}

@@ -1,4 +1,6 @@
 class AssignmentsController < ApplicationController
+	before_filter :authenticate
+	before_filter :admin_user, only: :delete_assignments
 
 	def index
 		@title = "All Assignments"

@@ -9,6 +9,8 @@ class Employee < ActiveRecord::Base
 	has_many :directions, dependent: :destroy
 	has_many :locations, through: :directions
 
+	has_many :notes, dependent: :destroy
+
 	validates :name, presence: true
 	validates :name, uniqueness: true
 	validates :first_name, presence: true

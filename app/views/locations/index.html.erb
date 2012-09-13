@@ -2,10 +2,12 @@
 	<ul>
 		<li><p>Primary Function</p></li>
 		<li><%= link_to "Switch Locations", switch_locations_path, confirm: "Are you sure you want to switch locations?" %></li>
-		<li><p>Do Not Touch</p></li>
-		<li><%= link_to "New Location", new_location_path %></li>
-		<li><%= link_to "Set Locations", set_locations_path, confirm: "Reset locations?" %></li>
-		<li><%= link_to "Delete All Locations", delete_directions_path, confirm: "Click cancel now!" %></li>
+		<% if current_user.admin? %>
+			<li><p>Do Not Touch</p></li>
+			<li><%= link_to "New Location", new_location_path %></li>
+			<li><%= link_to "Set Locations", set_locations_path, confirm: "Reset locations?" %></li>
+			<li><%= link_to "Delete All Locations", delete_directions_path, confirm: "Click cancel now!" %></li>
+		<% end %>
 	</ul>
 </div>
 <div class="pageContent">

@@ -23,6 +23,18 @@
 .employeeShowSection .employeeShowSectionHeader {
 	font-weight: bold;
 	margin: 0 0 8px 0;
+	width: 550px;
+}
+
+.employeeShowSection .employeeShowSectionHeader a {
+	color: rgb(150, 150, 150);
+	float: right;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.employeeShowSection .employeeShowSectionHeader a:hover {
+	color: rgb(100, 100, 100);
 }
 
 .employeeShowSection p {

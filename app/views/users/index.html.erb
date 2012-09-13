@@ -1,0 +1,15 @@
+<div class="pageHeader">
+	<ul>
+		<li><p>Control Panel</p></li>
+		<li><%= link_to "New User", new_user_path %></li>
+	</ul>
+</div>
+<%= render 'shared/search' %>
+<div class="pageContent">
+	<p class="pageContentHeader">All Users</p>
+	<div class="undoList">
+		<ol>
+			<%= render @users %>
+		</ol>
+	</div>
+</div>

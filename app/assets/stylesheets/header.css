@@ -71,9 +71,10 @@
 }
 
 .accountMenu ul li a {
-	color: rgb(75, 75, 75);
+	color: rgb(100, 100, 100);
 	display: block;
 	float: none;
+	font-size: 14px;
 	padding: 10px 20px;
 	text-align: left;
 }

@@ -1,0 +1,19 @@
+<div class="userNew">
+	<p class="userNewHeader">Welcome</p>
+	<%= form_for(:session, url: sessions_path) do |f| %>
+		<div class="userNewForm">
+			<div class="field">
+				<p>Email</p>
+				<%= f.text_field :email %>
+			</div>
+			<div class="field">
+				<p>Password</p>
+				<%= f.password_field :password, autocomplete: "off" %>
+			</div>
+			<div class="action">
+				<%= f.submit "Sign In" %>
+			</div>
+		</div>
+	<% end %>
+	<div class="clear"></div>
+</div>

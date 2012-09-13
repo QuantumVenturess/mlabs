@@ -6,7 +6,9 @@
 		<% else %>
 			<li><%= link_to "New Defaults", new_default_path %></li>
 		<% end %>
-		<li><%= link_to "Delete Defaults", Default.first, method: :delete, confirm: "Are you sure you want to delete system defaults?" %></li>
+		<% if current_user.admin? %>
+			<li><%= link_to "Delete Defaults", Default.first, method: :delete, confirm: "Are you sure you want to delete system defaults?" %></li>
+		<% end %>
 	</ul>
 </div>
 <div class="pageContent">
