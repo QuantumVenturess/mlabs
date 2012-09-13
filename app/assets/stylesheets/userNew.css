@@ -62,7 +62,19 @@
 
 .userNewForm .action input:hover {
 	cursor: pointer;
-	background: rgb(104, 187, 224);
+	background: rgb(109, 192, 229);
+}
+
+.userNewForm .action input:focus {
+	background: rgb(109, 192, 229);
+}
+
+.userNewForm .action input:active {
+	background: rgb(89, 172, 209);
+}
+
+.userNewForm .action input:focus, .userNewForm .action input:active {
+	outline: none;
 }
 
 .userNewForm .action a {

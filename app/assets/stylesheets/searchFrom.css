@@ -44,7 +44,19 @@
 
 .searchForm .action input:hover {
 	cursor: pointer;
-	background: rgb(104, 187, 224);
+	background: rgb(109, 192, 229);
+}
+
+.searchForm .action input:focus {
+	background: rgb(109, 192, 229);
+}
+
+.searchForm .action input:active {
+	background: rgb(89, 172, 209);
+}
+
+.searchForm .action input:focus, .searchForm .action input:active {
+	outline: none;
 }
 
 .searchForm .action a {
