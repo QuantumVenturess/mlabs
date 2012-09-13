@@ -10,7 +10,11 @@ class SessionsController < ApplicationController
 		params[:session][:email] = params[:session][:email].downcase
 		user = User.authenticate(params[:session][:email], params[:session][:password])
 		if user
-			sign_in user
+			if params[:remember_me]
+				sign_in user
+			else
+				sign_in_temp user
+			end
 			user.increment!(:sign_in_count, by = 1)
 			user.update_attribute(:last_signed_in, Time.now)
 			redirect_back_or root_path

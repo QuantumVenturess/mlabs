@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
 
 		def default_settings
 			if Default.first
+				@work_days = Default.first.work_days
 				@lab_count = Default.first.lab_employees
 				@entry_needed = Default.first.entry_employees
 				@wones_needed = Default.first.wones_employees
@@ -18,6 +19,7 @@ class ApplicationController < ActionController::Base
 				@sarah_needed = Default.first.sarah_employees
 				@wet_needed = Default.first.wet_employees
 			else
+				@work_days = 5
 				@lab_count = 24
 				@entry_needed = 2
 				@wones_needed = 3

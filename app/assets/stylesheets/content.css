@@ -39,6 +39,7 @@
 
 .pageContent {
 	margin-left: 250px;
+	min-width: 900px;
 	padding: 40px 10px;
 }
 

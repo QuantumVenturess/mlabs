@@ -5,7 +5,7 @@ class JobsController < ApplicationController
 
 	def index
 		@title = "Job Assignments"
-		@wet = Assignment.where("job_id = ?", 1).take(@wet_needed)
+		@wet = Assignment.where("job_id = ?", 1).take(@wet_needed * @work_days)
 		@wet_station = @wet.group_by(&:month_day)
 		@entry = Assignment.where("job_id = ?", 2).take(@entry_needed)
 		@entry_station = @entry.group_by(&:month_day)

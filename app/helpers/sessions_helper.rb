@@ -6,7 +6,7 @@ module SessionsHelper
 	end
 
 	def sign_in_temp(user)
-		cookies.signed[:remember_token] = { value: [user.id, user.salt], domain:all }
+		cookies.signed[:remember_token] = { value: [user.id, user.salt], domain: :all }
 		self.current_user = user
 	end
 
