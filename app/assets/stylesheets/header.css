@@ -19,6 +19,7 @@
 }
 
 .logo img {
+	border: none;
 	height: 41px;
 	width: 254px;
 }
