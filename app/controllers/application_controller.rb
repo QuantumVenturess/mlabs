@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+	before_filter :set_user_time_zone
+
 	protect_from_forgery
 	include ApplicationHelper
 	include AssignmentsHelper
@@ -27,5 +29,9 @@ class ApplicationController < ActionController::Base
 				@sarah_needed = 2
 				@wet_needed = 2
 			end
+		end
+
+		def set_user_time_zone
+			Time.zone = "Pacific Time (US & Canada)"
 		end
 end
